@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "eslint": "./node_modules/.bin/eslint --fix ./*/**.js",
-    "prettier": "./node_modules/.bin/eslint --writer ./*/**.js",
+    "lint": "eslint --fix \"./**/*.js\"",
+    "pre": "prettier --write \"./**/*.js\"",
     "prepare": "husky install"
   },
   "dependencies": {
