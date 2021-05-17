@@ -3,20 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "eslint": "./node_modules/.bin/eslint --fix"
+    "eslint": "./node_modules/.bin/eslint --fix ./*.js",
+    "prettier": "./node_modules/.bin/eslint --writer ./*.js"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
     "eslint": "^7.26.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "husky": "^6.0.0",
-    "jade": "~1.11.0",
     "lint-staged": "^11.0.0",
-    "morgan": "~1.9.1",
     "prettier": "^2.3.0"
   },
   "husky": {

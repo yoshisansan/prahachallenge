@@ -2,7 +2,7 @@ const express = require('express');
 const http = require('http');
 const app = express();
 
-app.use(express.json())
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // app.use(function(req, res, next) {
@@ -18,8 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 //   next();
 // })
 
-  app.get('/', (req, res) => {
-  res.status(200).type('application/json').json({test: 'hello world'});
+app.get('/', (req, res) => {
+  res.status(200).type('application/json').json({ test: 'hello world' });
 });
 
 app.post('/', (req, res) => {
@@ -27,6 +27,8 @@ app.post('/', (req, res) => {
   const data = req.body;
   // res.status(201).type('application/json').send(data);
   res.status(201).type(cType).send(data);
-})
+});
 
-http.createServer(app).listen(8080, () => console.log('Example app listening on port 8080!'))
+http
+  .createServer(app)
+  .listen(8080, () => console.log('Example app listening on port 8080!'));
