@@ -1,6 +1,6 @@
 'use strict';
 // ここに ngrok で生成したリンクを貼る
-const publicUrl = `https://00bb061093db.ngrok.io`;
+const publicUrl = `https://b1c34d07f29c.ngrok.io`;
 
 const postRequest = (data, url, dom) => {
   const XHR = new XMLHttpRequest();

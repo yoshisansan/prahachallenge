@@ -53,8 +53,8 @@ module.exports = (port) => {
     res.end();
   });
 
+
   app.options('/not-simple-req', cors(corsNotSimpleReq), (req, res) => {
-    res.header('Content-Type', 'application/json');
     // preflightを取得できない
     console.log(isPreflight(req));
     res.end();
@@ -70,8 +70,7 @@ module.exports = (port) => {
     res.json(req.body);
   });
 
-  app.options('/not-simple-req', cors(corsNotSimpleReq), (req, res) => {
-    res.header('Content-Type', 'application/json');
+  app.options('/not-simple-req-cors', cors(corsNotSimpleReq), (req, res) => {
     // preflightを取得できない
     console.log(isPreflight(req));
     res.end();

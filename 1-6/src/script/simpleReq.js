@@ -1,5 +1,5 @@
 'use strict';
-const publicUrl = `https://3abc5196ee49.ngrok.io`;
+const publicUrl = `https://b618800c8df3.ngrok.io`;
 
 const postRequest = (data, url, dom) => {
   const XHR = new XMLHttpRequest();
