@@ -1,4 +1,4 @@
-## 始め方  
+## 始め方🚀  
 node index.js で２つのサーバーを立ち上げます  
   
 src/script/simpleReq.js もしくは src/script/notSimpleReq.js の 変数publicUrl に ngrok で生成されたURLを貼ります。    
@@ -8,7 +8,7 @@ localhost:4040/not-simple-req
 のどちらかのページへアクセスして動作を確認します。
   
   
-## サーバーの説明  
+## サーバーの説明📕  
 ２つのサーバーがあり役割が異なります。
   
 ### appViewServer.js  
@@ -23,7 +23,7 @@ localhost:4040/not-simple-req
 リクエストの受け用サーバー。HTML側のフォームに値を入れて送信するとその内容でPOSTされたリクエストをappPostReqServerdで受け取ります。  
   
   
-## srcファイルの説明
+## srcファイルの説明🍶
   
 scriptディレクトリはHTML側のscriptタグへ挿入されたファイルが入っています。送信ボタンを押した際に発火するアクションが入っています。
   
