@@ -14,6 +14,7 @@ app.use((req, res, next) => {
     'Access-Control-Allow-Headers': 'Origin, Content-Type, Accept, Set-Cookie',
     'Access-Control-Allow-Methods': 'GET',
   };
+  req.set(headerOption);
   res.set(headerOption);
   next();
 });

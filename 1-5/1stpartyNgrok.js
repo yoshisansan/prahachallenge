@@ -1,20 +1,22 @@
 // 保留（localhostをhttps化してやろうと立ち上げたもののブラウザに怒られて放置）
 // Chromeのみで動作。Firefox→localhost:4040/inspect/httpのリンクへリダイレクトされてしまい確認できない。Safari→localhostサーバーとngrokサーバーの両方とも保存できない
-const express = require('express');
-const https = require('https');
-const path = require('path');
-const cfenv = require('cfenv');
-const fs = require('fs');
-const app = express();
-const cors = require('cors');
+const express = require('express'),
+  path = require('path'),
+  app = express(),
+  cors = require('cors'),
+  port = 3000;
 
-const appEnv = cfenv.getAppEnv();
-const httpsKey = {
-  key: fs.readFileSync('./server_key.pem'),
-  cert: fs.readFileSync('./server_crt.pem'),
-};
+  // cfenv = require('cfenv'),
+  // fs = require('fs'),
+// const https = require('https');
 
-app.use(express.static('public'));
+// const appEnv = cfenv.getAppEnv();
+// const httpsKey = {
+//   key: fs.readFileSync('./server_key.pem'),
+//   cert: fs.readFileSync('./server_crt.pem'),
+// };
+
+app.use(express.static('views'));
 app.use(cors({ origin: true, credentials: true }));
 app.use((req, res, next) => {
   const headerOption = {
@@ -27,7 +29,6 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  console.log('hello');
   const hostName = req.get('host');
   const cookieOption = {
     maxAge: 1000 * 60 * 5,
@@ -36,9 +37,13 @@ app.get('/', (req, res) => {
     secure: true,
   };
   res.cookie('domain', hostName, cookieOption);
-  res.sendFile(path.join(__dirname, '/public/cookie.html'));
+  res.sendFile(path.join(__dirname, '/views/cookie.html'));
 });
 
-https.createServer(httpsKey, app).listen(appEnv.port, () => {
-  console.log('https://localhost:' + appEnv.port);
+app.listen(port, () => {
+  console.log(`Server: http://localhost:${port}`);
 });
+
+// https.createServer(httpsKey, app).listen(appEnv.port, () => {
+//   console.log('https://localhost:' + appEnv.port);
+// });

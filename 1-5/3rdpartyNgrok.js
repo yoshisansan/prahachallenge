@@ -2,16 +2,21 @@ const ngrok = require('ngrok'),
   express = require('express'),
   path = require('path'),
   cors = require('cors'),
-  port = 8080,
+  port = 4040,
   app = express();
 
+const corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200,
+};
+
 app.use(express.static('assets'));
-app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
+app.use(cors({ origin: true, credentials: true }));
+app.use(cors(corsOptions));
+app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
-app.use(cors({ origin: true, credentials: true }));
 
 app.get('/', (req, res) => {
   const hostName = req.get('host');
@@ -25,6 +30,7 @@ app.get('/', (req, res) => {
   res.cookie('domain', hostName, cookieOption);
   res.end();
 });
+
 app.get('/nensyuu.jpg', (req, res) => {
   res.sendFile(path.join(__dirname, '/assets/nensyuu.jpg'));
 });
