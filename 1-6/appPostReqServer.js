@@ -54,7 +54,7 @@ module.exports = (port) => {
   });
 
 
-  app.options('/not-simple-req', cors(corsNotSimpleReq), (req, res) => {
+  app.options('/not-simple-req', (req, res) => {
     // preflightを取得できない
     console.log(isPreflight(req));
     res.end();
@@ -63,6 +63,10 @@ module.exports = (port) => {
   app.post('/not-simple-req', cors(corsNotSimpleReq), (req, res) => {
     res.header('Content-Type', 'application/json');
     res.cookie(null);
+    console.log(req.method);
+    if(req.method === 'OPTIONS'){
+      console.log(req.method);
+    }
     console.log(`
       appPostReqServerMsg: POSTリクエストを受け取りました
       path: /not-simple-req
