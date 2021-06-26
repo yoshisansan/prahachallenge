@@ -30,12 +30,11 @@ module.exports = (port) => {
 
   const isPreflight = (req) => {
     const isOptionsStatus = req.method === 'OPTIONS',
-      hasOriginHeader = req.headers['origin'],
-      hasRequestMethod = req.headers['access-control-request-mehotd'];
+      hasOriginHeader = req.headers['origin'];
     console.log(req.method);
-    console.log(isOptionsStatus, hasOriginHeader, hasRequestMethod);
+    console.log(isOptionsStatus, hasOriginHeader);
 
-    return isOptionsStatus && hasOriginHeader && hasRequestMethod;
+    return isOptionsStatus && hasOriginHeader;
   };
 
   app.post('/simple-req', cors(corsAllAlow), (req, res) => {
@@ -53,9 +52,8 @@ module.exports = (port) => {
     res.end();
   });
 
-
   app.options('/not-simple-req', (req, res) => {
-    // preflightを取得できない
+    // corsオプションを外さないとpreflightを取得できない
     console.log(isPreflight(req));
     res.end();
   });
