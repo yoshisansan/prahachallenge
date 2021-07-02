@@ -16,10 +16,11 @@ module.exports = (port) => {
     origin: 'https://developer.mozilla.org/ja/',
   };
   const corsNotSimpleReq = {
-    origin: 'http://localhost:4040',
+    origin: '*',
     'Access-Control-Max-Age': 200,
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': 'X-Requested-With, Origin, Content-Type, Accept',
+    preflightContinue: true,
   };
   const corsNotAllowPreflight = {
     origin: 'https://developer.mozilla.org/ja/',
@@ -52,7 +53,7 @@ module.exports = (port) => {
     res.end();
   });
 
-  app.options('/not-simple-req', (req, res) => {
+  app.options('/not-simple-req', cors(corsNotSimpleReq), (req, res) => {
     // corsオプションを外さないとpreflightを取得できない
     console.log(isPreflight(req));
     res.end();
