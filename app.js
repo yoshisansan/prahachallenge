@@ -1,5 +1,4 @@
 'use strict';
-
 const program = require('commander');
 const superagent = require('superagent');
 const dayjs = require('dayjs');
