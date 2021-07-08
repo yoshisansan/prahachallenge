@@ -13,6 +13,7 @@ const getRequest = (url: string, dom: HTMLElement | null): void => {
   XHR.onreadystatechange = () => {
     if (XHR.readyState === XMLHttpRequest.DONE && XHR.status === 200) {
       console.log(`受け取ったデータ： ${XHR.response}`);
+
       return (dom.innerText = 'Done with HTTP status 200');
     }
 
