@@ -1,12 +1,14 @@
 {
-  "name": "docker_web_app_for_express",
+  "name": "get-calendly-reserve-date",
   "version": "1.0.0",
-  "description": "Node.js and Express on Docker",
-  "author": "areph <40balmung@gmail.com>",
+  "description": "直近１ヶ月後の指定時間の空いている日程を一気に取得するスクリプト",
+  "author": "akifumi from areph <40balmung@gmail.com>",
   "main": "app.js",
+  "license": "MIT",
   "scripts": {
-    "start": "node app.js",
-    "prepare": "husky install"
+    "start": "node app.js -d",
+    "prepare": "husky install",
+    "lint": "eslint --fix *.js"
   },
   "dependencies": {
     "commander": "^8.0.0",
