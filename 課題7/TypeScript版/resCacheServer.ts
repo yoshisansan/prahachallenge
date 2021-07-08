@@ -28,6 +28,15 @@ export const resCacheServer: resCacheServerType = (port) => {
     res.send('hai');
   });
 
+  app.get('/last-modified', (req: express.Request, res: express.Response, next: express.NextFunction) => {
+    listenLog('cache-control');
+    listenLog('ヘッダー',req.headers);
+
+    //ここでCache-Controlをセット
+    res.header('Last-Modified', 'Fri, Jul 2021 07:28:00 GMT');
+    res.send('hai');
+  });
+
   ngrok.connect(port).then((url: string) => {
     app.listen(port, (): void => {
       listenLog(`resCacheServer: ${url}`);

@@ -13,8 +13,8 @@ export const clientServer: clientServerType = (port: number) => {
 
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
-  app.use(express.static('views'));
-  app.use(express.static('script'));
+  app.use(express.static('dist/views'));
+  app.use(express.static('dist/script'));
 
   // app.use(cors({ origin: true, credentials: true }));
 
