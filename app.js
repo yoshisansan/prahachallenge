@@ -34,6 +34,7 @@ if (!options.date_time) {
       `（　´∀｀）＜　直近１ヶ月の${options.date_time}に空いている日程やで\n`,
       '-------つ--'
     );
+
     for (const day of days) {
       day['spots']
         .flatMap((x) => x['start_time'])
