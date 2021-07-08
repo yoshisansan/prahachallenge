@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./reset.css">
+  <style>
+    .wrapper {
+      margin: 0 auto;
+      text-align: center;
+    }
+    header {
+      width: 100vw;
+      height: 60px;
+      line-height: 60px;
+      background-color: rgb(190, 85, 85);
+      color: #fff;
+    }
+    main {
+      width: 280px;
+      text-align: center;
+      height: 600px;
+      margin: 0 auto;
+      padding-top: 42px;
+    }
+    .main__img {
+      margin-top: 8px;
+    }
+    .main__img-img {
+      width: 280px;
+    }
+    footer {
+      width: 100vw;
+      height: 240px;
+      line-height: 240px;
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <p>hogeヘッダー</p>
+    </header>
+    <main>
+      <p>なんでも可</p>
+      <!-- res.sendFileをres.cookieと一緒に使うとcookieをセットできなかったので画像は画像だけを返し、cookieはiframeで返す。aタグはCORS許可されていないためただのリンク先。 -->
+      <div class="main__img"><a href="https://7271003bc677.ngrok.io"><img class="main__img-img" src="https://7271003bc677.ngrok.io/nensyuu.jpg" /><iframe src="https://7271003bc677.ngrok.io" ></iframe></a></div>
+    </main>
+    <footer>
+      <p>hogeフッター</p>
+    </footer>
+    <script>
+      'use strict';
+      window.onload = function() {};
+    </script>
+  </div>
+</body>
+</html>
