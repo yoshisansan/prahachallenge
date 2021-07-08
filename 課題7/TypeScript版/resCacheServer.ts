@@ -30,7 +30,7 @@ export const resCacheServer: resCacheServerType = (port) => {
 
   ngrok.connect(port).then((url: string) => {
     app.listen(port, (): void => {
-      listenLog(`appPostReqServer: ${url}`);
+      listenLog(`resCacheServer: ${url}`);
     });
   });
 };
