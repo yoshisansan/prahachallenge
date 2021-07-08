@@ -1,0 +1,13 @@
+{
+  "name": "debugTest",
+  "version": "1.0.0",
+  "main": "app.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "DEBUG=* node addUserServer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "typescript": "^4.3.5"
+  }
+}
