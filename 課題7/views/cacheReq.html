@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./reset.css">
+  <style>
+    .wrapper {
+      margin: 0 auto;
+      text-align: center;
+    }
+    header {
+      width: 100vw;
+      height: 60px;
+      line-height: 60px;
+      background-color: rgb(190, 85, 85);
+      color: #fff;
+    }
+    main {
+      width: 280px;
+      text-align: center;
+      margin: 0 auto;
+      padding-top: 28px;
+      padding-bottom: 42px;
+    }
+    .main__img {
+      margin-top: 8px;
+    }
+    .main__img-img {
+      width: 280px;
+    }
+    .main__img-iframe {
+      height: 0px;
+    }
+    footer {
+      width: 100vw;
+      height: 240px;
+      line-height: 240px;
+      background-color: #e0e0e0;
+    }
+    .main__form-wrap {
+      margin-top: 24px;
+    }
+    .main__form {
+      width: 100%;
+    }
+    .main__btn-title {
+      font-size: 18px;
+      margin: 8px;
+    }
+    .main__form-text {
+      width: 100%;
+      height: 40px;
+      font-size: 16px;
+      line-height: 40px;
+      border: 1px solid #e0e0e0;
+      border-radius: 16px;
+      margin-top: 8px;
+    }
+    .main__form__button {
+      margin-top: 8px;
+    }
+    .main__form__button-btn {
+      width: 180px;
+      height: 40px;
+      border-radius: 20px;
+      background-color: cornflowerblue;
+      color: #fff;
+    }
+    .img-size{
+      width: 280px;
+      height: 200px;
+    }
+    .img-size img{
+      width: 280px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <p>課題７：Cache</p>
+    </header>
+    <main>
+      <div class="main__form-wrap">
+        <p id="CahceControlDom" class="main__btn-title">🐈Chache-Controlリクエスト</p>
+          <div class="main__form__button"><button class="main__form__button-btn" type="submit" onclick="cahceControlGET()">送信する</button></div>
+      </div>
+      <div class="main__form-wrap">
+        <p id="LastModifiedDom" class="main__btn-title">🐕Last-Modifiedリクエスト</p>
+          <div class="main__form__button"><button class="main__form__button-btn" type="submit" onclick="lastModifiedGET()">送信する</button></div>
+      </div>
+      <div class="main__form-wrap img-size">
+        <div id="CacheControlImg">🌵Cahce-Control有りのイメージ画像</div>
+        <!-- cacheReq.jsでimgタグ挿入 -->
+      </div>
+      <div class="main__form-wrap img-size">
+        <div id="NotCacheControlImg">💓Cahce-Control無しのイメージ画像</div>
+        <!-- cacheReq.jsでimgタグ挿入 -->
+      </div>
+    </main>
+    <footer>
+      <p>hogeフッター</p>
+    </footer>
+    <script type="text/javascript" src="./cacheReq.js"></script>
+  </div>
+</body>
+</html>
