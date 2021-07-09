@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "tsc && yarn viewcopy && DEBUG=express node --unhandled-rejections=strict ./dist/index.js",
+    "start": "tsc && yarn viewcopy && yarn assetcopy && DEBUG=express node --unhandled-rejections=strict ./dist/index.js",
     "viewcopy": "cp ./views/* ./dist/views/",
+    "assetcopy": "cp ./assets/* ./dist/assets/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

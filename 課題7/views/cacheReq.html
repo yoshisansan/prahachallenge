@@ -21,9 +21,9 @@
     main {
       width: 280px;
       text-align: center;
-      height: 600px;
       margin: 0 auto;
-      padding-top: 42px;
+      padding-top: 28px;
+      padding-bottom: 42px;
     }
     .main__img {
       margin-top: 8px;
@@ -69,6 +69,15 @@
       background-color: cornflowerblue;
       color: #fff;
     }
+    .img-size{
+      width: 280px;
+      height: 200px;
+    }
+    .img-size img{
+      width: 280px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
   </style>
 </head>
 <body>
@@ -78,8 +87,20 @@
     </header>
     <main>
       <div class="main__form-wrap">
-        <p id="CahceControlDom" class="main__btn-title">Chache-Controlリクエスト</p>
+        <p id="CahceControlDom" class="main__btn-title">🐈Chache-Controlリクエスト</p>
           <div class="main__form__button"><button class="main__form__button-btn" type="submit" onclick="cahceControlGET()">送信する</button></div>
+      </div>
+      <div class="main__form-wrap">
+        <p id="LastModifiedDom" class="main__btn-title">🐕Last-Modifiedリクエスト</p>
+          <div class="main__form__button"><button class="main__form__button-btn" type="submit" onclick="lastModifiedGET()">送信する</button></div>
+      </div>
+      <div class="main__form-wrap img-size">
+        <div id="CacheControlImg">🌵Cahce-Control有りのイメージ画像</div>
+        <!-- cacheReq.jsでimgタグ挿入 -->
+      </div>
+      <div class="main__form-wrap img-size">
+        <div id="NotCacheControlImg">💓Cahce-Control無しのイメージ画像</div>
+        <!-- cacheReq.jsでimgタグ挿入 -->
       </div>
     </main>
     <footer>

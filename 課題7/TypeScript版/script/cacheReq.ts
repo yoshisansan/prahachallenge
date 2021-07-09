@@ -1,6 +1,28 @@
 'use strict';
 const publicUrl: string = `https://b070ef488597.ngrok.io`;
 
+// imgタグ挿入
+const insertControlCacheImg = (url: string) => {
+  const imgDOM: HTMLImageElement = document.createElement('img');
+  imgDOM.src = `${url}/nensyuu.jpg`;
+
+  const insertTargetDOM: HTMLElement | null = document.getElementById('CacheControlImg');
+  if(insertTargetDOM !== null) insertTargetDOM.after(imgDOM);
+  return;
+}
+const insertNotControlCacheImg = (url: string) => {
+  const imgDOM: HTMLImageElement = document.createElement('img');
+  imgDOM.src = `${url}/not-cache-control/nensyuu.jpg`;
+
+  const insertTargetDOM: HTMLElement | null = document.getElementById('NotCacheControlImg');
+  if(insertTargetDOM !== null) insertTargetDOM.after(imgDOM);
+
+  return;
+}
+
+insertControlCacheImg(publicUrl);
+insertNotControlCacheImg(publicUrl);
+
 const getRequest = (url: string, dom: HTMLElement | null): void => {
   if(dom === null) {
     console.log('DOMが取得できませんでした');
