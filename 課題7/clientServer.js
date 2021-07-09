@@ -4,7 +4,6 @@ const express = require('express'),
   app = express();
 
 module.exports = (port) => {
-
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
   app.use(express.static('views'));

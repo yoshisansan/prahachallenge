@@ -2,8 +2,8 @@ const ngrok = require('ngrok'),
   express = require('express'),
   cors = require('cors'),
   path = require('path');
-  // cacheControl = require('express-cache-controller'),
-  app = express();
+// cacheControl = require('express-cache-controller'),
+app = express();
 
 module.exports = (port) => {
   app.use(express.json());
@@ -11,7 +11,7 @@ module.exports = (port) => {
 
   const corsOption = {
     origin: '*',
-  }
+  };
 
   app.use(cors(corsOption));
 
@@ -24,7 +24,7 @@ module.exports = (port) => {
 
   app.get('/last-modified', (req, res, next) => {
     console.log('cache-control');
-    console.log('ヘッダー',req.headers);
+    console.log('ヘッダー', req.headers);
 
     //ここでCache-Controlをセット
     res.header('Last-Modified', 'Fri, Jul 2021 07:28:00 GMT');
