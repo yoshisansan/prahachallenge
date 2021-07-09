@@ -63,7 +63,7 @@ module.exports = (port) => {
     res.header('Content-Type', 'application/json');
     res.cookie(null);
     console.log(req.method);
-    if(req.method === 'OPTIONS'){
+    if (req.method === 'OPTIONS') {
       console.log(req.method);
     }
     console.log(`

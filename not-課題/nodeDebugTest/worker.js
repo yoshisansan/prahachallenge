@@ -1,5 +1,5 @@
-var a = require('debug')('worker:a')
-  , b = require('debug')('worker:b');
+var a = require('debug')('worker:a'),
+  b = require('debug')('worker:b');
 
 function work() {
   a('doing lots of uninteresting work');
