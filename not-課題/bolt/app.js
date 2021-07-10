@@ -4,6 +4,7 @@ require('dotenv').config();
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   signingSecret: process.env.SLACK_SIGNING_SECRET,
+  // Socket対応する場合に使用
   // appToken: process.env.SLACK_APP_TOKEN,
   // socketMode: true,
 });
@@ -34,7 +35,7 @@ app.message('hello', async ({ message, say }) => {
 						"emoji": true
 					},
 					"value": "click_me_123",
-					"action_id": "actionId-0"
+					"action_id": "button-test"
 				}
 			]
 		},
@@ -49,7 +50,7 @@ app.message('hello', async ({ message, say }) => {
 						"emoji": true
 					},
 					"value": "click_me_123",
-					"action_id": "actionId-0"
+					"action_id": "actionId-2"
 				}
 			]
 		},
@@ -64,7 +65,7 @@ app.message('hello', async ({ message, say }) => {
 						"emoji": true
 					},
 					"value": "click_me_123",
-					"action_id": "actionId-0"
+					"action_id": "actionId-3"
 				}
 			]
 		},
@@ -74,6 +75,11 @@ app.message('hello', async ({ message, say }) => {
 	],
     text: `Hey there <@${message.user}>!`
   });
+});
+
+app.action("button-test", async ({ack, say}) => {
+  await ack();
+  await say(`Hello World`);
 });
 
 (async () => {
