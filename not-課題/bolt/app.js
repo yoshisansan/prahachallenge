@@ -1,4 +1,5 @@
 const { App } = require('@slack/bolt');
+const getCalendlyRservationTime = require('./src/action/getCalendlyRservationTime');
 require('dotenv').config();
 
 const app = new App({
@@ -79,7 +80,8 @@ app.message('hello', async ({ message, say }) => {
 
 app.action("button-test", async ({ack, say}) => {
   await ack();
-  await say(`Hello World`);
+  const msg = await getCalendlyRservationTime();
+  await say(msg);
 });
 
 (async () => {
