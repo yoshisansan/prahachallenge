@@ -1,0 +1,16 @@
+{
+  "name": "bolt2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/bolt": "^3.4.1",
+    "dotenv": "^10.0.0",
+    "ngrok": "^4.0.1"
+  }
+}
