@@ -1,5 +1,5 @@
 // サーバー：https://slackpraha-iris-ounce.glitch.me
-// サーバーのソースコード：https://glitch.com/edit/#!/slackpraha-iris-ounce
+// ソースコード（同じ内容）：https://glitch.com/edit/#!/slackpraha-iris-ounce
 const { App } = require('@slack/bolt');
 const getCalendlyRservationTime = require('./src/action/getCalendlyRservationTime');
 require('dotenv').config();
